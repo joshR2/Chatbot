@@ -9,11 +9,13 @@ public class ChatbotView
 		JOptionPane.showMessageDialog(null,wordsFromSomewhere);
 	}
 	
-	public String grabInput(displayText)
+	public String grabAnswer(String stuff)
 	{
-		String returnedText = "";
+		String answer = "";
 		
-		return returnedText;
+		answer = JOptionPane.showInputDialog(null,stuff);
+		
+		return answer;
 	}
 
 }

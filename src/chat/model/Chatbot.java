@@ -1,10 +1,8 @@
 package chat.model;
 
-public class chatbotModel 
-{
-	import java.util.ArrayList;
+import java.util.ArrayList;
 
-	/**
+/**
 	 * Base version of the 2015 Chatbot class. Only stub methods are provided. Students will complete methods as part
 	 * of the project.
 	 * @author Cody Henrichsen
@@ -23,7 +21,7 @@ public class chatbotModel
 		 */
 		public Chatbot(String userName)
 		{
-			
+			this.userName = userName;
 		}
 		
 		private void buildMemesList()
@@ -44,7 +42,22 @@ public class chatbotModel
 		 */
 		public boolean lengthChecker(String currentInput)
 		{
-			return false;
+			boolean hasLength = false;
+			
+			if(currentInput != null )
+			{
+				if(currentInput.length() >= 1)
+				{
+					hasLength = true;
+				}
+				
+				if(currentInput != null && currentInput.length() > 0)
+				{
+					hasLength = true;
+				}
+			}
+			
+			return hasLength;
 		}
 		
 		/**
@@ -85,7 +98,7 @@ public class chatbotModel
 		 */
 		public String getUserName()
 		{
-			return null;
+			return userName;
 		}
 		
 		/**
