@@ -25,12 +25,24 @@ import java.util.ArrayList;
 			this.politicalTopicList = new ArrayList<String>();
 			this.userName = userName;
 			this.content = "Motivational Sigh!";
+			
+			buildMemesList();
+			buildPoliticalTopicsList();
 		}
 		
 		private void buildMemesList()
 		{
 			// me gusta,troll,what if i told you,Spooderman,doge,bad luck brian,cute animals,pepe putin,"aliens",unhelpful teacher
-			
+			this.memesList.add("cute animals");
+			this.memesList.add("doge");
+			this.memesList.add("me gusta");
+			this.memesList.add("troll");
+			this.memesList.add("what if i told you");
+			this.memesList.add("spooderman");
+			this.memesList.add("bad luck brian");
+			this.memesList.add("pepe putin");
+			this.memesList.add("aliens");
+			this.memesList.add("unhelpful teacher");
 		}
 		
 		private void buildPoliticalTopicsList()
@@ -71,7 +83,13 @@ import java.util.ArrayList;
 		 */
 		public boolean contentChecker(String currentInput)
 		{
-			return false;
+			boolean hasContent = false;
+			
+			if(currentInput.toLowerCase().contains(content))
+			{
+				hasContent = true;
+			}
+			return hasContent;
 		}
 		
 		/**
@@ -93,7 +111,17 @@ import java.util.ArrayList;
 		 */
 		public boolean memeChecker(String currentInput)
 		{
-			return false;
+			boolean hasMeme = false;
+			
+			for (String currentMeme : memesList)
+			{
+				if(currentMeme.equalsIgnoreCase(currentInput))
+				{
+					hasMeme = true;
+				}
+			}
+			
+			return hasMeme;
 		}
 		
 		/**
