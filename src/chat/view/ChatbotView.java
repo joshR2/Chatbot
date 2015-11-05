@@ -1,21 +1,36 @@
 package chat.view;
 
 import javax.swing.JOptionPane;
+import javax.swing.ImageIcon;
 
 public class ChatbotView 
 {
-	public void showResponse(String wordsFromSomewhere)
+	private String windowMessage;
+	private ImageIcon chatIcon;
+	
+	public ChatbotView()
 	{
-		JOptionPane.showMessageDialog(null,wordsFromSomewhere);
+		windowMessage = "Hello from your friendly chatbot :D";
+		chatIcon = new ImageIcon(getClass().getResource("images/NyanCat.png"));
+		
 	}
 	
-	public String grabAnswer(String stuff)
+	public void showResponse(String wordsFromSomewhere)
 	{
-		String answer = "";
 		
-		answer = JOptionPane.showInputDialog(null,stuff);
 		
-		return answer;
+		JOptionPane.showMessageDialog(null,wordsFromSomewhere,windowMessage, JOptionPane.PLAIN_MESSAGE, chatIcon);
+	
+	
+	}
+	
+	public String grabUserInput(String displayText)
+	{
+		String userInput = "";
+		
+		userInput = JOptionPane.showInputDialog(null,displayText,windowMessage,JOptionPane.INFORMATION_MESSAGE, chatIcon,null, "Type Here :)").toString();
+		
+		return userInput;
 	}
 
 }

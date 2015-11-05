@@ -19,20 +19,20 @@ public class ChatbotController
 	public ChatbotController()
 	{
 		myDisplay = new ChatbotView();
-		String userName = myDisplay.grabAnswer("What is your name?");
+		String userName = myDisplay.grabUserInput("What is your name?");
 		myBot = new Chatbot(userName);
 		
 	}
 	
 	public void start()
 	{
-		myDisplay.grabAnswer("hello" + myBot.getUserName());
+		myDisplay.grabUserInput("hello" + myBot.getUserName());
 		chat();
 	}
 	
 	private void chat()
 	{
-		String conversation = myDisplay.grabAnswer("What would you like to talk about today?");
+		String conversation = myDisplay.grabUserInput("What would you like to talk about today?");
 		while(myBot.lengthChecker(conversation));
 //		{
 //			if(!simepleBot.quitChecker(conversation))
